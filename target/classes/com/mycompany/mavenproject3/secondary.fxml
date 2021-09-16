@@ -5,10 +5,11 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" prefHeight="616.0" prefWidth="718.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.SecondaryController">
     <children>
-      <MenuButton mnemonicParsing="false" prefHeight="64.0" prefWidth="116.0" text="MenuButton">
+      <MenuButton mnemonicParsing="false" prefHeight="44.0" prefWidth="124.0" text="Выберите размер">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -16,8 +17,17 @@
          <opaqueInsets>
             <Insets top="10.0" />
          </opaqueInsets>
+         <font>
+            <Font size="10.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="200.0" right="-200.0" />
+         </VBox.margin>
       </MenuButton>
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to login" />
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to login">
+         <VBox.margin>
+            <Insets bottom="-300.0" />
+         </VBox.margin></Button>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -26,7 +26,7 @@
       </MenuButton>
         <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Switch to login">
          <VBox.margin>
-            <Insets bottom="-300.0" />
+            <Insets bottom="-100.0" />
          </VBox.margin></Button>
     </children>
     <padding>

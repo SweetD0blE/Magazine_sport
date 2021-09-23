@@ -5,12 +5,15 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.PrimaryController">
+<VBox alignment="CENTER" prefHeight="242.0" prefWidth="329.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.PrimaryController">
    <children>
-      <TextField />
-      <PasswordField />
-      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Войти в систему" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Войти в систему компании СпортИнвентарь" />
+      <TextField fx:id="usernameTextField" />
+      <PasswordField fx:id="passwordTextField" />
+      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Вход" />
+      <Button mnemonicParsing="false" text="Создать аккаунт" />
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

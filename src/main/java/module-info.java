@@ -6,6 +6,6 @@ module com.mycompany.mavenproject3 {
     requires org.hibernate.orm.core;
     
     opens com.mycompany.mavenproject3 to javafx.fxml;
-    opens com.mycompany.magaziine.mydb;
+    opens com.mycompany.mavenproject3.mydb;
     exports com.mycompany.mavenproject3;
 }

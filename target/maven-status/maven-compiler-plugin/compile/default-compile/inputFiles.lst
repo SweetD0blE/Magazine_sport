@@ -1,4 +1,8 @@
-/home/student/NetBeansProjects/4isip-18-2/mavenproject3/src/main/java/com/mycompany/mavenproject3/App.java
-/home/student/NetBeansProjects/4isip-18-2/mavenproject3/src/main/java/com/mycompany/mavenproject3/SecondaryController.java
-/home/student/NetBeansProjects/4isip-18-2/mavenproject3/src/main/java/module-info.java
-/home/student/NetBeansProjects/4isip-18-2/mavenproject3/src/main/java/com/mycompany/mavenproject3/PrimaryController.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/PrimaryController.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/App.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/SecondaryController.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/mydb/Order1.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/mydb/Product.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/mydb/Role.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/module-info.java
+/home/student/NetBeansProjects/4isip-18-2/magazinekurs/src/main/java/com/mycompany/mavenproject3/mydb/User.java

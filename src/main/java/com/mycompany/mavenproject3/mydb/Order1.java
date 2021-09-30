@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -27,8 +29,7 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Order1.findAll", query = "SELECT o FROM Order1 o"),
     @NamedQuery(name = "Order1.findByIdOrder", query = "SELECT o FROM Order1 o WHERE o.idOrder = :idOrder"),
     @NamedQuery(name = "Order1.findByCostOrder", query = "SELECT o FROM Order1 o WHERE o.costOrder = :costOrder"),
-    @NamedQuery(name = "Order1.findByDateOrder", query = "SELECT o FROM Order1 o WHERE o.dateOrder = :dateOrder"),
-    @NamedQuery(name = "Order1.findByProductIdProduct", query = "SELECT o FROM Order1 o WHERE o.productIdProduct = :productIdProduct")})
+    @NamedQuery(name = "Order1.findByDateOrder", query = "SELECT o FROM Order1 o WHERE o.dateOrder = :dateOrder")})
 public class Order1 implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,20 +42,15 @@ public class Order1 implements Serializable {
     @Column(name = "date_order")
     @Temporal(TemporalType.DATE)
     private Date dateOrder;
-    @Basic(optional = false)
-    @Column(name = "product_id_product")
-    private int productIdProduct;
+    @JoinColumn(name = "product_id_product", referencedColumnName = "id_product")
+    @ManyToOne(optional = false)
+    private Product productIdProduct;
 
     public Order1() {
     }
 
     public Order1(Integer idOrder) {
         this.idOrder = idOrder;
-    }
-
-    public Order1(Integer idOrder, int productIdProduct) {
-        this.idOrder = idOrder;
-        this.productIdProduct = productIdProduct;
     }
 
     public Integer getIdOrder() {
@@ -81,11 +77,11 @@ public class Order1 implements Serializable {
         this.dateOrder = dateOrder;
     }
 
-    public int getProductIdProduct() {
+    public Product getProductIdProduct() {
         return productIdProduct;
     }
 
-    public void setProductIdProduct(int productIdProduct) {
+    public void setProductIdProduct(Product productIdProduct) {
         this.productIdProduct = productIdProduct;
     }
 

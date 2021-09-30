@@ -7,12 +7,15 @@ package com.mycompany.mavenproject3.mydb;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,9 +28,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Product.findAll", query = "SELECT p FROM Product p"),
     @NamedQuery(name = "Product.findByIdProduct", query = "SELECT p FROM Product p WHERE p.idProduct = :idProduct"),
     @NamedQuery(name = "Product.findByName", query = "SELECT p FROM Product p WHERE p.name = :name"),
-    @NamedQuery(name = "Product.findByCategory", query = "SELECT p FROM Product p WHERE p.category = :category"),
-    @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price = :price"),
-    @NamedQuery(name = "Product.findByOnSclad", query = "SELECT p FROM Product p WHERE p.onSclad = :onSclad")})
+    @NamedQuery(name = "Product.findByPrice", query = "SELECT p FROM Product p WHERE p.price = :price")})
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -37,13 +38,11 @@ public class Product implements Serializable {
     private Integer idProduct;
     @Column(name = "Name")
     private String name;
-    @Column(name = "Category")
-    private String category;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "Price")
     private BigDecimal price;
-    @Column(name = "on_sclad")
-    private String onSclad;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "productIdProduct")
+    private Collection<Order1> order1Collection;
 
     public Product() {
     }
@@ -68,14 +67,6 @@ public class Product implements Serializable {
         this.name = name;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public BigDecimal getPrice() {
         return price;
     }
@@ -84,12 +75,12 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public String getOnSclad() {
-        return onSclad;
+    public Collection<Order1> getOrder1Collection() {
+        return order1Collection;
     }
 
-    public void setOnSclad(String onSclad) {
-        this.onSclad = onSclad;
+    public void setOrder1Collection(Collection<Order1> order1Collection) {
+        this.order1Collection = order1Collection;
     }
 
     @Override

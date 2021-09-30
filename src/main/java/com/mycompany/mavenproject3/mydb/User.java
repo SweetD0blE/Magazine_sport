@@ -10,6 +10,8 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -25,8 +27,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "User.findByIdUser", query = "SELECT u FROM User u WHERE u.idUser = :idUser"),
     @NamedQuery(name = "User.findByName", query = "SELECT u FROM User u WHERE u.name = :name"),
     @NamedQuery(name = "User.findByLogin", query = "SELECT u FROM User u WHERE u.login = :login"),
-    @NamedQuery(name = "User.findByPassw", query = "SELECT u FROM User u WHERE u.passw = :passw"),
-    @NamedQuery(name = "User.findByRolesIdRoles", query = "SELECT u FROM User u WHERE u.rolesIdRoles = :rolesIdRoles")})
+    @NamedQuery(name = "User.findByPassw", query = "SELECT u FROM User u WHERE u.passw = :passw")})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,9 +43,9 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "passw")
     private String passw;
-    @Basic(optional = false)
-    @Column(name = "roles_id_roles")
-    private int rolesIdRoles;
+    @JoinColumn(name = "roles_id_roles", referencedColumnName = "id_roles")
+    @ManyToOne(optional = false)
+    private Role rolesIdRoles;
 
     public User() {
     }
@@ -53,11 +54,10 @@ public class User implements Serializable {
         this.idUser = idUser;
     }
 
-    public User(Integer idUser, String login, String passw, int rolesIdRoles) {
+    public User(Integer idUser, String login, String passw) {
         this.idUser = idUser;
         this.login = login;
         this.passw = passw;
-        this.rolesIdRoles = rolesIdRoles;
     }
 
     public Integer getIdUser() {
@@ -92,11 +92,11 @@ public class User implements Serializable {
         this.passw = passw;
     }
 
-    public int getRolesIdRoles() {
+    public Role getRolesIdRoles() {
         return rolesIdRoles;
     }
 
-    public void setRolesIdRoles(int rolesIdRoles) {
+    public void setRolesIdRoles(Role rolesIdRoles) {
         this.rolesIdRoles = rolesIdRoles;
     }
 

@@ -6,12 +6,15 @@
 package com.mycompany.mavenproject3.mydb;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -33,6 +36,8 @@ public class Role implements Serializable {
     private Integer idRoles;
     @Column(name = "name")
     private String name;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "rolesIdRoles")
+    private Collection<User> userCollection;
 
     public Role() {
     }
@@ -55,6 +60,14 @@ public class Role implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Collection<User> getUserCollection() {
+        return userCollection;
+    }
+
+    public void setUserCollection(Collection<User> userCollection) {
+        this.userCollection = userCollection;
     }
 
     @Override

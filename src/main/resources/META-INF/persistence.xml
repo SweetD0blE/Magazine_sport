@@ -6,6 +6,10 @@
     <class>com.mycompany.mavenproject3.mydb.Role</class>
     <class>com.mycompany.mavenproject3.mydb.Order1</class>
     <class>com.mycompany.mavenproject3.mydb.User</class>
+    <class>com.mycompany.mavenproject3.User</class>
+    <class>com.mycompany.mavenproject3.Product</class>
+    <class>com.mycompany.mavenproject3.Order1</class>
+    <class>com.mycompany.mavenproject3.Role</class>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb?zeroDateTimeBehavior=CONVERT_TO_NULL"/>

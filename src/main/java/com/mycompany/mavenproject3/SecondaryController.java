@@ -11,9 +11,11 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -26,7 +28,26 @@ public class SecondaryController {
     public static EntityManager em = emf.createEntityManager();
     
     @FXML
-    private TableView tableView;
+    private TableView table;
+    
+    @FXML
+    private Label nameField;
+    
+    @FXML
+    private Label priceField;
+    
+    @FXML
+    private Label colorField;
+    
+    @FXML
+    private Label descriptionField;
+    
+    @FXML
+    private Label sizeField;
+
+    
+    @FXML
+    private Product selectedProduct;
     
     @FXML
     private TableColumn<Product, String> idColumn;
@@ -39,7 +60,6 @@ public class SecondaryController {
 
     @FXML
     public void initialize() {
-        
         Query q = em.createNamedQuery("Product.findAll");
         List<Product> productList = q.getResultList();
           
@@ -56,7 +76,7 @@ public class SecondaryController {
         });
         
         ObservableList<Product> products = FXCollections.observableList(productList);
-        tableView.setItems(products);
+        table.setItems(products);
     }
     
     @FXML
@@ -64,5 +84,25 @@ public class SecondaryController {
         App.setRoot("primary");
     }
     
+    @FXML
+    private void onMouseClicked() throws IOException {
+        // Получаем информацию о выбранной строке таблицы:
+        TableView.TableViewSelectionModel sm = table.getSelectionModel();
+        int rowIndex = sm.getSelectedIndex();
+        System.out.println(rowIndex);
+        
+        // Получаем содержимое строки таблицы по индексу:
+        selectedProduct = (Product) table.getItems().get(rowIndex);
+        System.out.println(selectedProduct);
+        
+        // Подгружаем данные выбранного пользователя 
+        // в панель редактирования справа:
+        nameField.setText(selectedProduct.getName());
+        colorField.setText(selectedProduct.getColor());
+        sizeField.setText(selectedProduct.getSize());
+        descriptionField.setText(selectedProduct.getDescription());
+
+    }
+
 
 }

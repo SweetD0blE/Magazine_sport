@@ -38,7 +38,7 @@ public class PrimaryController {
             User user = (User) u.getSingleResult();
 
             if (user.getPassw().equals(password)) {
-                err.setText("");
+//                err.setText("");
                 App.setRoot("secondary");
             } else {
                 err.setText("Неверный логин и пароль");
@@ -46,6 +46,11 @@ public class PrimaryController {
         } catch (NoResultException e) {
             err.setText("Неверный логин и пароль");
         }
+    }
+    
+    @FXML
+    private void switchToThird() throws IOException {
+        App.setRoot("registration");
     }
 }
     

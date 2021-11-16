@@ -1,8 +1,8 @@
 com/mycompany/mavenproject3/mydb/Product.class
-module-info.class
 com/mycompany/mavenproject3/SecondaryController.class
 com/mycompany/mavenproject3/mydb/Role.class
 com/mycompany/mavenproject3/mydb/Order1.class
-com/mycompany/mavenproject3/App.class
 com/mycompany/mavenproject3/PrimaryController.class
+module-info.class
+com/mycompany/mavenproject3/App.class
 com/mycompany/mavenproject3/mydb/User.class

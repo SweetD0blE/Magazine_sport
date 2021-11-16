@@ -44,8 +44,7 @@ public class SecondaryController {
     
     @FXML
     private Label sizeField;
-
-    
+   
     @FXML
     private Product selectedProduct;
     
@@ -89,11 +88,11 @@ public class SecondaryController {
         // Получаем информацию о выбранной строке таблицы:
         TableView.TableViewSelectionModel sm = table.getSelectionModel();
         int rowIndex = sm.getSelectedIndex();
-        System.out.println(rowIndex);
+//        System.out.println(rowIndex);
         
         // Получаем содержимое строки таблицы по индексу:
         selectedProduct = (Product) table.getItems().get(rowIndex);
-        System.out.println(selectedProduct);
+//        System.out.println(selectedProduct);
         
         // Подгружаем данные выбранного пользователя 
         // в панель редактирования справа:

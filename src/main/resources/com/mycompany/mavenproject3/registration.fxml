@@ -1,23 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="242.0" prefWidth="329.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.ThirdController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.ThirdController">
    <children>
-      <Label id="err" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация" />
-      <TextField fx:id="nameTextField" promptText="Введите Имя" />
-      <TextField fx:id="loginTextField" promptText="Введите Логин" />
-      <PasswordField fx:id="passwordTextField" promptText="Введите Пароль" />
-      <Button fx:id="registerButton" onMouseClicked="#switchToLogin" text="Зарегистрироваться" />
+      <Label id="err" layoutX="10.0" layoutY="10.0" />
+      <Text layoutX="316.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="nameTextField" layoutX="260.0" layoutY="84.0" prefHeight="24.0" prefWidth="280.0" promptText="Введите Имя">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="loginTextField" layoutX="262.0" layoutY="137.0" prefHeight="30.0" prefWidth="280.0" promptText="Введите Логин">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordTextField" layoutX="261.0" layoutY="188.0" prefHeight="24.0" prefWidth="280.0" promptText="Введите Пароль">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="registerButton" layoutX="320.0" layoutY="267.0" onMouseClicked="#switchToLogin" style="-fx-background-color: black;" text="Зарегистрироваться" textFill="WHITE" />
+      <Button layoutX="370.0" layoutY="315.0" mnemonicParsing="false" onMouseClicked="#switchToLogin" style="-fx-background-color: black;" text="Назад" textFill="WHITE" />
    </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+</AnchorPane>

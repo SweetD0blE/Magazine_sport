@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.SecondaryController">
    <children>
@@ -45,14 +46,18 @@
                         <Label text="Цвет товара" GridPane.rowIndex="1" />
                         <Label fx:id="colorField" text="." GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Размер товара" GridPane.rowIndex="2" />
-                        <Label text="Описание товара" GridPane.rowIndex="3" />
-                        <Label fx:id="descriptionField" text="." GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label fx:id="sizeField" text="." GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <Button layoutX="341.0" layoutY="260.0" mnemonicParsing="false" text="Купить" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                  <Button fx:id="secondaryButton" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" text="Выйти" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
+                  <Button fx:id="secondaryButton" layoutX="14.0" layoutY="260.0" mnemonicParsing="false" onMouseClicked="#switchToPrimary" text="Выйти" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" />
                   <Button layoutX="487.0" layoutY="10.0" mnemonicParsing="false" text="Заказ" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <Label fx:id="descriptionField" layoutX="142.0" layoutY="177.0" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="400.0" text="." wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="8.0" layoutY="177.0" text="Описание товара:" />
                </children>
             </AnchorPane>
         </items>

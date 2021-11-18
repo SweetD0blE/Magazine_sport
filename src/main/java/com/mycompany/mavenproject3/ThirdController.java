@@ -30,7 +30,7 @@ public class ThirdController {
         Node n2 = App.getRoot().lookup("#passwordTextField");
         TextField passwordField = (TextField) n2;
         
-        Node n3 = App.getRoot().lookup("nameTextField");
+        Node n3 = App.getRoot().lookup("#nameTextField");
         TextField nameField = (TextField) n3;
         
         String login = loginField.getText();
@@ -38,12 +38,13 @@ public class ThirdController {
         String name = nameField.getText();
         
         Query r = em.createNamedQuery("Role.findByIdRoles");
-        r.setParameter("login", "0");
+        r.setParameter("idRoles", 0);
         
         Role rol = (Role) r.getSingleResult();
         em.getTransaction().begin();
         
         User user = new User();
+        user.setIdUser(0);
         user.setLogin(login);
         user.setPassw(password);
         user.setName(name);
@@ -51,6 +52,10 @@ public class ThirdController {
         
         em.persist(user);
         em.getTransaction().commit();
+        
+      
+        System.out.println("Регистрация прошла успешно: " + login);
+        System.out.println("Пароль: " + password);
         
         App.setRoot("primary");
             

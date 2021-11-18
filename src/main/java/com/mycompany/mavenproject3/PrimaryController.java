@@ -46,6 +46,8 @@ public class PrimaryController {
         } catch (NoResultException e) {
             err.setText("Неверный логин и пароль");
         }
+        
+             
     }
     
     @FXML

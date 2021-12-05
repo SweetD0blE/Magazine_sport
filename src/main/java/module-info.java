@@ -6,6 +6,7 @@ module com.mycompany.mavenproject3 {
     requires org.hibernate.orm.core;
     requires javafx.base;
     requires javafx.graphics;
+    requires java.base;
     
     opens com.mycompany.mavenproject3 to javafx.fxml;
     opens com.mycompany.mavenproject3.sportmagazine;

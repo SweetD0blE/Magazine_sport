@@ -1,6 +1,7 @@
 com\mycompany\mavenproject3\PrimaryController.class
 com\mycompany\mavenproject3\sportmagazine\Role.class
 com\mycompany\mavenproject3\ThirdController.class
+com\mycompany\mavenproject3\AdminController.class
 com\mycompany\mavenproject3\SecondaryController.class
 com\mycompany\mavenproject3\sportmagazine\User.class
 module-info.class

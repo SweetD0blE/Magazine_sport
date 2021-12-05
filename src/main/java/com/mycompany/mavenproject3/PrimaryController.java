@@ -1,5 +1,6 @@
 package com.mycompany.mavenproject3;
 
+import com.mycompany.mavenproject3.sportmagazine.Role;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -17,7 +18,7 @@ public class PrimaryController {
     public static EntityManager em = emf.createEntityManager();
 
     @FXML
-    private void switchToSecondary() throws IOException {
+    private void switchToUsers() throws IOException {
         Node n1 = App.getRoot().lookup("#usernameTextField");
         TextField usernameField = (TextField) n1;
         
@@ -34,13 +35,18 @@ public class PrimaryController {
         u.setParameter("login", username);
         Label err = (Label) App.getRoot().lookup("#err");
 
+
         try {
             User user = (User) u.getSingleResult();
 
             if (user.getPassw().equals(password)) {
-//                err.setText("");
-                App.setRoot("secondary");
+                Role role = user.getRoleidroles();
+           if(role.getName().equals("Admin")){
+                App.setRoot("admin");
             } else {
+               App.setRoot("secondary");
+            }
+           }else{
                 err.setText("Неверный логин и пароль");
             }
         } catch (NoResultException e) {

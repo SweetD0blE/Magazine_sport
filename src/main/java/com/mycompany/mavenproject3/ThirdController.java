@@ -47,7 +47,7 @@ public class ThirdController {
         user.setLogin(login);
         user.setPassw(password);
         user.setName(name);
-        user.setRoleidroles(2);
+        user.setRoleidroles(role);
         
         em.persist(user);
         em.getTransaction().commit();

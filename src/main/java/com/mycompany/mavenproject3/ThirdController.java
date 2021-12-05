@@ -1,8 +1,8 @@
 package com.mycompany.mavenproject3;
 
 import static com.mycompany.mavenproject3.PrimaryController.em;
-import com.mycompany.mavenproject3.mydb.Role;
-import com.mycompany.mavenproject3.mydb.User;
+import com.mycompany.mavenproject3.sportmagazine.Role;
+import com.mycompany.mavenproject3.sportmagazine.User;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -18,44 +18,43 @@ import javax.persistence.Query;
  */
 
 public class ThirdController {
+    
+    @FXML
+    private TextField nameTextField;
+    @FXML
+    private TextField loginTextField;
+    @FXML
+    private TextField passwordTextField;
+    
+    
     public static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_mavenproject3_jar_1.0-SNAPSHOTPU");
     public static EntityManager em = emf.createEntityManager();
     
     
     @FXML
     private void switchToLogin() throws IOException {
-        Node n1 = App.getRoot().lookup("#loginTextField");
-        TextField loginField = (TextField) n1;
         
-        Node n2 = App.getRoot().lookup("#passwordTextField");
-        TextField passwordField = (TextField) n2;
+        String login = loginTextField.getText();
+        String password = passwordTextField.getText();
+        String name = nameTextField.getText();
         
-        Node n3 = App.getRoot().lookup("#nameTextField");
-        TextField nameField = (TextField) n3;
-        
-        String login = loginField.getText();
-        String password = passwordField.getText();
-        String name = nameField.getText();
-        
-        Query r = em.createNamedQuery("Role.findByIdRoles");
-        r.setParameter("idRoles", 0);
-        
-        Role rol = (Role) r.getSingleResult();
+        Query r = em.createNamedQuery("Role.findByName");
+        r.setParameter("name","User");
+        Role role = (Role) r.getSingleResult();
         em.getTransaction().begin();
         
-        User user = new User();
-        user.setIdUser(0);
+        User user = new User();  
         user.setLogin(login);
         user.setPassw(password);
         user.setName(name);
-        user.setRolesIdRoles(rol);
+        user.setRoleidroles(2);
         
         em.persist(user);
         em.getTransaction().commit();
         
       
-        System.out.println("Регистрация прошла успешно: " + login);
-        System.out.println("Пароль: " + password);
+        System.out.println("Registration was successful: " + login);
+        System.out.println("Password: " + password);
         
         App.setRoot("primary");
             

@@ -1,9 +1,9 @@
-com/mycompany/mavenproject3/mydb/Product.class
-com/mycompany/mavenproject3/ThirdController.class
-com/mycompany/mavenproject3/SecondaryController.class
-com/mycompany/mavenproject3/mydb/Role.class
-com/mycompany/mavenproject3/mydb/Order1.class
-com/mycompany/mavenproject3/PrimaryController.class
+com\mycompany\mavenproject3\PrimaryController.class
+com\mycompany\mavenproject3\sportmagazine\Role.class
+com\mycompany\mavenproject3\ThirdController.class
+com\mycompany\mavenproject3\SecondaryController.class
+com\mycompany\mavenproject3\sportmagazine\User.class
 module-info.class
-com/mycompany/mavenproject3/App.class
-com/mycompany/mavenproject3/mydb/User.class
+com\mycompany\mavenproject3\sportmagazine\Product.class
+com\mycompany\mavenproject3\App.class
+com\mycompany\mavenproject3\sportmagazine\Order1.class

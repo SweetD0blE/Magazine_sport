@@ -1,7 +1,7 @@
 package com.mycompany.mavenproject3;
 
 import static com.mycompany.mavenproject3.PrimaryController.em;
-import com.mycompany.mavenproject3.mydb.Product;
+import com.mycompany.mavenproject3.sportmagazine.Product;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import java.io.IOException;

@@ -8,6 +8,8 @@ module com.mycompany.mavenproject3 {
     requires javafx.graphics;
     
     opens com.mycompany.mavenproject3 to javafx.fxml;
-    opens com.mycompany.mavenproject3.mydb;
+    opens com.mycompany.mavenproject3.sportmagazine;
+    
     exports com.mycompany.mavenproject3;
+   
 }

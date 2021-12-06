@@ -10,7 +10,6 @@ module com.mycompany.mavenproject3 {
     
     opens com.mycompany.mavenproject3 to javafx.fxml;
     opens com.mycompany.mavenproject3.sportmagazine;
-    
     exports com.mycompany.mavenproject3;
    
 }

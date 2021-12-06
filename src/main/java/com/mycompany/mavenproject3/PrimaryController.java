@@ -14,9 +14,10 @@ import com.mycompany.mavenproject3.sportmagazine.User;
 import javax.persistence.NoResultException;
 
 public class PrimaryController {
+
     public static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_mavenproject3_jar_1.0-SNAPSHOTPU");
     public static EntityManager em = emf.createEntityManager();
-
+    
     @FXML
     private void switchToUsers() throws IOException {
         Node n1 = App.getRoot().lookup("#usernameTextField");
@@ -27,33 +28,32 @@ public class PrimaryController {
         
         System.out.println("Username: " + usernameField.getText());
         System.out.println("Password: " + passwordField.getText());
-
+        
         String username = usernameField.getText();
         String password = passwordField.getText();
-
+        
         Query u = em.createNamedQuery("User.findByLogin");
         u.setParameter("login", username);
         Label err = (Label) App.getRoot().lookup("#err");
-
-
+        
         try {
             User user = (User) u.getSingleResult();
-
+            
             if (user.getPassw().equals(password)) {
+                err.setText("");
                 Role role = user.getRoleidroles();
-           if(role.getName().equals("Admin")){
+                if (role.getName().equals("Admin")) {
                 App.setRoot("admin");
+                } else {
+                    App.setRoot("secondary");
+                }
             } else {
-               App.setRoot("secondary");
-            }
-           }else{
                 err.setText("Неверный логин и пароль");
             }
         } catch (NoResultException e) {
             err.setText("Неверный логин и пароль");
         }
         
-             
     }
     
     @FXML
@@ -61,4 +61,3 @@ public class PrimaryController {
         App.setRoot("registration");
     }
 }
-    

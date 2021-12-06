@@ -4,34 +4,45 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.ThirdController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mavenproject3.ThirdController">
    <children>
+      <AnchorPane prefHeight="72.0" prefWidth="900.0" style="-fx-background-color: #01509f;">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="112.0" layoutX="524.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="379.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
       <Label id="err" layoutX="10.0" layoutY="10.0" />
-      <Text layoutX="316.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <TextField fx:id="nameTextField" layoutX="260.0" layoutY="84.0" prefHeight="24.0" prefWidth="280.0" promptText="Введите Имя">
+      <TextField fx:id="nameTextField" layoutX="260.0" layoutY="84.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Имя">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="loginTextField" layoutX="262.0" layoutY="137.0" prefHeight="30.0" prefWidth="280.0" promptText="Введите Логин">
+      <TextField fx:id="loginTextField" layoutX="262.0" layoutY="137.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Логин">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordTextField" layoutX="261.0" layoutY="188.0" prefHeight="24.0" prefWidth="280.0" promptText="Введите Пароль">
+      <PasswordField fx:id="passwordTextField" layoutX="261.0" layoutY="188.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Пароль">
          <font>
             <Font size="16.0" />
          </font>
       </PasswordField>
-      <Button fx:id="registerButton" layoutX="320.0" layoutY="267.0" onMouseClicked="#switchToLogin" style="-fx-background-color: black;" text="Зарегистрироваться" textFill="WHITE" />
-      <Button layoutX="360.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#switchToLogin" style="-fx-background-color: black;" text="Назад" textFill="WHITE" />
+      <Button fx:id="registerButton" layoutX="361.0" layoutY="263.0" onMouseClicked="#switchToLogin" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: black;" text="Зарегистрироваться" textFill="WHITE" />
+      <Button layoutX="359.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#switchToLogin" prefHeight="33.0" prefWidth="168.0" style="-fx-background-color: black;" text="Назад" textFill="WHITE" />
    </children>
 </AnchorPane>

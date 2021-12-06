@@ -71,7 +71,7 @@ public class SecondaryController {
         });
         
         priceColumn.setCellValueFactory((TableColumn.CellDataFeatures<Product, String> cd) -> {
-            return new SimpleStringProperty(cd.getValue().getPrice().toString());
+            return new SimpleStringProperty(cd.getValue().getPrice());
         });
         
         ObservableList<Product> products = FXCollections.observableList(productList);
@@ -102,4 +102,6 @@ public class SecondaryController {
         descriptionField.setText(selectedProduct.getDescription());
 
     }
+   
+
 }

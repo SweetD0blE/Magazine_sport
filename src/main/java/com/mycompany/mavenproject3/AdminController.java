@@ -32,7 +32,7 @@ public class AdminController {
     public static EntityManager em = emf.createEntityManager();
     
     @FXML
-    private TableView table;
+    private TableView tableAdmin;
     
     @FXML
     private Label nameField;
@@ -70,10 +70,12 @@ public class AdminController {
     private TextField productCostTextField;
 
     @FXML
-    private void initialize(URL url, ResourceBundle rb) {
+    private void initialize() {
         
         Query q = em.createNamedQuery("Product.findAll");
         List<Product> productList = q.getResultList();
+        
+        
           
         idColumn.setCellValueFactory((TableColumn.CellDataFeatures<Product, String> cd) -> {
             return new SimpleStringProperty(cd.getValue().getIdProduct().toString());
@@ -84,11 +86,11 @@ public class AdminController {
         });
         
         priceColumn.setCellValueFactory((TableColumn.CellDataFeatures<Product, String> cd) -> {
-            return new SimpleStringProperty(cd.getValue().getPrice().toString());
+            return new SimpleStringProperty(cd.getValue().getPrice());
         });
         
         ObservableList<Product> products = FXCollections.observableList(productList);
-        table.setItems(products);
+        tableAdmin.setItems(products);
         // TODO
     }    
     @FXML
@@ -110,37 +112,34 @@ public class AdminController {
        productColorTextField.setText("");
        productCostTextField.setText("");
         
-     
+     initialize();
         
     }
     
     @FXML
     private void deleteProduct() throws IOException{
         
-        Product p = (Product) table.getSelectionModel().getSelectedItem();
+        Product p = (Product) tableAdmin.getSelectionModel().getSelectedItem();
         System.out.println(p);
         em.getTransaction().begin();
         em.remove(p);
         em.getTransaction().commit();
    
+        initialize();
        
     }
     
-     @FXML
-    private void switchToPrimary1(ActionEvent event) throws IOException {
-        App.setRoot("primary");
-    }
 
     @FXML
     private void onMouseClicked1() throws IOException {
         // Получаем информацию о выбранной строке таблицы:
-        TableView.TableViewSelectionModel sm = table.getSelectionModel();
+        TableView.TableViewSelectionModel sm = tableAdmin.getSelectionModel();
         int rowIndex = sm.getSelectedIndex();
-//        System.out.println(rowIndex);
+        //System.out.println(rowIndex);
         
         // Получаем содержимое строки таблицы по индексу:
-        selectedProduct = (Product) table.getItems().get(rowIndex);
-//        System.out.println(selectedProduct);
+        selectedProduct = (Product) tableAdmin.getItems().get(rowIndex);
+        //System.out.println(selectedProduct);
         
         // Подгружаем данные выбранного пользователя 
         // в панель редактирования справа:
@@ -149,5 +148,9 @@ public class AdminController {
         sizeField.setText(selectedProduct.getSize());
         descriptionField.setText(selectedProduct.getDescription());
 
+    }
+     @FXML
+    private void onCloseClicked() {
+        System.exit(0);
     }
 }

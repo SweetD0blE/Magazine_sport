@@ -6,6 +6,7 @@ import com.mycompany.mavenproject3.sportmagazine.User;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -34,9 +35,15 @@ public class ThirdController {
     @FXML
     private void switchToLogin() throws IOException {
         
+        Label err = (Label) App.getRoot().lookup("#err");
         String login = loginTextField.getText();
         String password = passwordTextField.getText();
         String name = nameTextField.getText();
+        
+        if(name.isEmpty() || password.isEmpty() || login.isEmpty()){
+            err.setText("Неверный логин или пароль");
+        }else{
+        
         
         Query r = em.createNamedQuery("Role.findByName");
         r.setParameter("name","User");
@@ -58,7 +65,6 @@ public class ThirdController {
         
         App.setRoot("primary");
             
-    }
-    
-    
+            }  
+        }
 }

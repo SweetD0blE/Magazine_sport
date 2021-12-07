@@ -91,7 +91,7 @@ public class SecondaryController {
 //        System.out.println(rowIndex);
         
         // Получаем содержимое строки таблицы по индексу:
-        selectedProduct = (Product) table.getItems().get(rowIndex);
+        selectedProduct = (Product) table.getItems().get(rowIndex-1);
 //        System.out.println(selectedProduct);
         
         // Подгружаем данные выбранного пользователя 

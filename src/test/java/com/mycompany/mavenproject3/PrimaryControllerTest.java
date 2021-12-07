@@ -70,7 +70,7 @@ public class PrimaryControllerTest {
 }
       @Test
       public void testGetProduct() {
-            System.out.println("getProduct");
+        System.out.println("getProduct");
         Query q = em.createNamedQuery("Product.findByIdProduct");
 
         q.setParameter("idProduct", 1);
@@ -82,7 +82,7 @@ public class PrimaryControllerTest {
       }
       @Test
       public void FailedTestGetProduct() {
-            System.out.println("getProduct");
+        System.out.println("getProduct");
         Query q = em.createNamedQuery("Product.findByIdProduct");
 
         q.setParameter("idProduct", 1);

@@ -26,23 +26,26 @@
             </Text>
          </children>
       </AnchorPane>
-      <Label id="err" layoutX="10.0" layoutY="10.0" />
-      <TextField fx:id="nameTextField" layoutX="260.0" layoutY="84.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Имя">
+      <Label id="err" layoutX="308.0" layoutY="235.0" prefHeight="17.0" prefWidth="285.0" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="nameTextField" layoutX="268.0" layoutY="84.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Имя">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="loginTextField" layoutX="262.0" layoutY="137.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Логин">
+      <TextField fx:id="loginTextField" layoutX="268.0" layoutY="137.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Логин">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordTextField" layoutX="261.0" layoutY="188.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Пароль">
+      <PasswordField fx:id="passwordTextField" layoutX="268.0" layoutY="188.0" prefHeight="35.0" prefWidth="366.0" promptText="Введите Пароль">
          <font>
             <Font size="16.0" />
          </font>
       </PasswordField>
-      <Button fx:id="registerButton" layoutX="361.0" layoutY="263.0" onMouseClicked="#switchToLogin" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: black;" text="Зарегистрироваться" textFill="WHITE" />
-      <Button layoutX="359.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#switchToLogin" prefHeight="33.0" prefWidth="168.0" style="-fx-background-color: black;" text="Назад" textFill="WHITE" />
+      <Button fx:id="registerButton" layoutX="359.0" layoutY="280.0" onMouseClicked="#switchToLogin" prefHeight="35.0" prefWidth="168.0" style="-fx-background-color: black;" text="Зарегистрироваться" textFill="WHITE" />
+      <Button layoutX="359.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#switchToLogin" prefHeight="33.0" prefWidth="168.0" style="-fx-background-color: black;" text="Назад" textFill="WHITE" />
    </children>
 </AnchorPane>

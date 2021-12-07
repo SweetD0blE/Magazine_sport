@@ -48,10 +48,10 @@ public class PrimaryController {
                     App.setRoot("secondary");
                 }
             } else {
-                err.setText("Неверный логин и пароль");
+                err.setText("Неверный логин или пароль");
             }
         } catch (NoResultException e) {
-            err.setText("Неверный логин и пароль");
+            err.setText("Неверный логин или пароль");
         }
         
     }
